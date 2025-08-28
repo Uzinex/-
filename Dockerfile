@@ -1,7 +1,7 @@
 # Dockerfile
 FROM node:22-alpine
 
-WORKDIR /
+WORKDIR 
 
 # Копируем только манифесты
 COPY package*.json ./
