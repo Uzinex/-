@@ -7,7 +7,7 @@ app.use(express.static(__dirname));
 
 // Главная страница
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "amia.html"));
+  res.sendFile(path.join(__dirname, "amira.html"));
 });
 
 // Запуск
