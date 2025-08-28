@@ -1,18 +1,16 @@
-# Используем лёгкий образ
+# Dockerfile
 FROM node:22-alpine
 
-# Рабочая директория
 WORKDIR /app
 
-# Копируем только манифесты и ставим прод-зависимости
+# Копируем только манифесты
 COPY package*.json ./
-RUN npm ci --omit=dev
+
+# Ставим зависимости без dev
+RUN npm install --omit=dev
 
 # Копируем остальной код
 COPY . .
 
-# Порт (Railway задаст PORT)
 EXPOSE 3000
-
-# Стартуем сервер
 CMD ["node", "server.js"]
